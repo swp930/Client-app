@@ -20,17 +20,19 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         try {
-            createFile();
+            openFile();
         } catch (IOException e) {
-            e.printStackTrace();
+            createFile();
         }
     }
 
     public void createFile() throws IOException {
         FileOutputStream fos = openFileOutput(fileNameTime, Context.MODE_APPEND);
         FileOutputStream fos2 = openFileOutput(fileNameCust, Context.MODE_APPEND);
+        
         //Log.d(TAG, "Created file");
         fos.close();
+        fos2.close();
     }
 
     @Override
@@ -58,5 +60,10 @@ public class MainActivity extends ActionBarActivity {
     public void addCustomer()
     {
 
+    }
+    
+    public void openFile()
+    {
+        
     }
 }
